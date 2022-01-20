@@ -52,7 +52,7 @@ namespace WebAPI.Controllers
             }
         }
         // POST api/<ProductOrderController>
-        // Adds a product to the selected store
+        // Adds a product order to the selected store
         [HttpPost]
         public ActionResult Post(string username, int prodID, int quantity)
         {
@@ -61,7 +61,8 @@ namespace WebAPI.Controllers
             if(currProdSelected.ID != null)
             {
                 try
-                {   
+                {
+                    _iubl.AddProductOrder(username, prodID, quantity);
                     //Checking if we can edit the current product's quantity from the product order
                     Product currProduct = _sbl.GetProductByID(prodID);
                     //Updates the current proucts quantity
@@ -72,7 +73,6 @@ namespace WebAPI.Controllers
                 {
                     return Conflict(ex.Message);
                 }
-            _iubl.AddProductOrder(username, prodID, quantity);
             return Ok("Successfully added a product order to your cart");
             }
             //No product found with inputted id
@@ -95,6 +95,7 @@ namespace WebAPI.Controllers
                 {
                     return NoContent();
                 }
+                _iubl.EditProductOrder(id, quantity, 0, 0);
                 //Checking if we can edit the current product's quantity from the product order
                 Product currProduct = _sbl.GetProductByID((int)pOrder.productID!);
                 //Updates the current proucts quantity
@@ -107,7 +108,6 @@ namespace WebAPI.Controllers
                 return Conflict(ex.Message);
             }
             //The 0s in place are for storeOrderId and userOrderId with are both 0 because we have not checked out
-            _iubl.EditProductOrder(id, quantity, 0, 0);
             return Ok();
 
         }

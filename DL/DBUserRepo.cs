@@ -187,6 +187,18 @@ public class DBUserRepo : IURepo {
     /// <param name="quantity">The quantity we want to buy of that product</param>
 
     public void AddProductOrder(string username, int prodID, int quantity){
+        Product currProd = GetProductByID(prodID);
+        //If a user tried to order a quantity less than 0
+        if (quantity <= 0)
+        {
+            throw new InputInvalidException("New quantity must be greater than 0");
+        }
+        //If the quantity goes over the amount the user can buy from the store
+        int newStoreQuantity = (int)currProd.Quantity! - quantity;
+        if (newStoreQuantity < 0)
+        {
+            throw new InputInvalidException($"The maximum number of {currProd.Name} you can order is {currProd.Quantity}");
+        }
         //Establishing new connection
         using SqlConnection connection = new SqlConnection(_connectionString);
         connection.Open();
@@ -219,7 +231,7 @@ public class DBUserRepo : IURepo {
         Log.Information("A product order of {quantity} {itemName}s has been placed with the ID of {ID} to the user ID of {currUserID}'s shopping cart",quantity, currProduct.Name, id, userID);
         }
     /// <summary>
-    /// Gets all the currentt product orders in a user's shopping cart
+    /// Gets all the current product orders in a user's shopping cart
     /// </summary>
     /// <param name="username">username inputted to get shopping cart from</param>
     /// <returns>A List of product orders(line items)</returns>
@@ -293,6 +305,20 @@ public class DBUserRepo : IURepo {
     /// <param name="storeOrderID">Edit's the store order id when we checkout the cart</param>
     /// <param name="userOrderID">Edit's the user's order id when we checkout the cart</param>
     public void EditProductOrder(int prodOrderID, int quantity, int storeOrderID, int userOrderID){
+        ProductOrder currPOrder = GetProductOrder(prodOrderID);
+        Product currProd = GetProductByID((int)currPOrder.productID!);
+        //If a user tried to order a quantity less than 0
+        if (quantity <= 0)
+        {
+            throw new InputInvalidException("New quantity must be greater than 0");
+        }
+        //If the quantity goes over the amount the user can buy from the store
+        int totalProductQuantity = (int)currProd.Quantity! + (int)currPOrder.Quantity!;
+        int newStoreQuantity =  totalProductQuantity - quantity;
+        if (newStoreQuantity < 0)
+        {
+            throw new InputInvalidException($"The maximum number of {currProd.Name} you can order is {totalProductQuantity}");
+        }
         using SqlConnection connection = new SqlConnection(_connectionString);
         connection.Open();
         //Updates a single product by id, and passed in requirements
@@ -301,7 +327,6 @@ public class DBUserRepo : IURepo {
         //Adds the paramaters to the sql command
         cmdEditProdOrder.Parameters.AddWithValue("@qty", quantity);
         //Calculating new total price
-        ProductOrder currPOrder = GetProductOrder(prodOrderID);     
         decimal totPrice = (((decimal)currPOrder.TotalPrice/(int)currPOrder.Quantity!)*quantity);
         cmdEditProdOrder.Parameters.AddWithValue("@tPrice", totPrice);
         cmdEditProdOrder.Parameters.AddWithValue("@prodOrderID", prodOrderID);
