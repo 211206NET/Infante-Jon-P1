@@ -56,13 +56,18 @@ builder.Services.AddScoped<IUBL, UserBL>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+/*// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
-{
+{*/
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Jon's Store P1 v1"));
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Jon's Store P1 v1");
+    c.RoutePrefix = string.Empty;
 }
+        );
+/*}*/
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthentication();

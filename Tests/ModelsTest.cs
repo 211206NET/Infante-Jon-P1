@@ -2,6 +2,7 @@ using Xunit;
 using Models;
 using CustomExceptions;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Tests;
 
@@ -71,22 +72,21 @@ public class ModelsTest{
         Assert.Equal(quantity, testProduct.Quantity);
     }
 
-    [Theory]
-    [InlineData(-50.9, -4)]
-    [InlineData(-30, -1)]
-    [InlineData(0, -6)]
-    public void ProductShouldNotHaveInvalidQuantityorPrice(decimal price, int quantity){
-        //Arrange: Testing if the product will have an invalid price or quantity. 
-        //Price should be a decimal greater than 0
-        //Quantity should be an integer greater than or equal to 0
-        Product testProduct = new Product();
+    // [Theory]
+    // [InlineData(-50.9, -4)]
+    // [InlineData(-30, -1)]
+    // [InlineData(0, -6)]
+    // public void ProductShouldNotHaveInvalidQuantityorPrice(decimal price, int quantity){
+    //     //Arrange: Testing if the product will have an invalid price or quantity. 
+    //     //Price should be a decimal greater than 0
+    //     //Quantity should be an integer greater than or equal to 0
+    //     Product testProduct = new Product();
 
-        //Act: Using inline data as paramaters
-
-        //Assert
-        Assert.Throws<InputInvalidException>(() => testProduct.Price = price);
-        Assert.Throws<InputInvalidException>(() => testProduct.Quantity = quantity);
-    }
+    //     //Act: Using inline data as paramaters
+    //     //Assert
+    //     Assert.Throws<InputInvalidException>(() => testProduct.Price = price);
+    //     Assert.Throws<InputInvalidException>(() => testProduct.Quantity = quantity);
+    // }
 
     [Fact]
     public void StoreShouldCreate(){
@@ -159,20 +159,20 @@ public class ModelsTest{
         Assert.Equal(Quantity, testPOrder.Quantity);   
     }
 
-    [Theory]
-    [InlineData(0)]
-    [InlineData(-1)]
-    [InlineData(-15)]
-    public void ProductOrderShouldNotHaveInvalidQuantity(int quantity){
-        //Arrange: Testing if the product will have an invalid quantity. 
-        //Quantity should greater than 0
-        ProductOrder testPOrder = new ProductOrder();
+    // [Theory]
+    // [InlineData(0)]
+    // [InlineData(-1)]
+    // [InlineData(-15)]
+    // public void ProductOrderShouldNotHaveInvalidQuantity(int quantity){
+    //     //Arrange: Testing if the product will have an invalid quantity. 
+    //     //Quantity should greater than 0
+    //     ProductOrder testPOrder = new ProductOrder();
 
-        //Act: Using inline data as paramaters
+    //     //Act: Using inline data as paramaters
 
-        //Assert
-        Assert.Throws<InputInvalidException>(() => testPOrder.Quantity = quantity);
-    }
+    //     //Assert
+    //     Assert.Throws<InputInvalidException>(() => testPOrder.Quantity = quantity);
+    // }
 
     [Fact]
     public void StoreOrderShouldSetValue(){

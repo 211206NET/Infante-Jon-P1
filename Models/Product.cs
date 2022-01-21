@@ -41,9 +41,9 @@ public class Product {
         
         set {
             //checks if value is less than or equal to 0
-/*            if (value <= 0){
-                throw new InputInvalidException("Price must be greater than 0. Please enter a valid amount:");
-            }  */ 
+            // if (value <= 0){
+            //     throw new InputInvalidException("Price must be greater than 0. Please enter a valid amount:");
+            // }
             this._price = value;
             }
         }
@@ -56,9 +56,9 @@ public class Product {
         
         set {
             //checks if value is less than 0
-/*            if (value < 0){
-                throw new InputInvalidException("Quantity must be 0 or higher. Please enter a valid amount:");
-                }*/       
+            // if (value < 0){
+            //     throw new InputInvalidException("Quantity must be 0 or higher. Please enter a valid amount:");
+            //     }      
             this._quantity = value;
         }
     }
