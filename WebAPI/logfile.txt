@@ -918,3 +918,43 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 2022-01-21 18:05:03.779 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7085/_framework/aspnetcore-browser-refresh.js - - - 200 11940 application/javascript;+charset=utf-8 5.0793ms
 2022-01-21 18:05:04.042 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7085/swagger/v1/swagger.json - -
 2022-01-21 18:05:04.260 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7085/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 218.4920ms
+2022-01-22 15:24:21.127 -05:00 [INF] User profile is available. Using 'C:\Users\jonjo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-22 15:24:21.378 -05:00 [INF] Now listening on: https://localhost:7085
+2022-01-22 15:24:21.379 -05:00 [INF] Now listening on: http://localhost:5085
+2022-01-22 15:24:21.379 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-22 15:24:21.380 -05:00 [INF] Hosting environment: Development
+2022-01-22 15:24:21.380 -05:00 [INF] Content root path: C:\Users\jonjo\OneDrive\Desktop\Revature\P1\WebAPI\
+2022-01-22 15:24:22.101 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7085/index.html - -
+2022-01-22 15:24:22.385 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7085/_framework/aspnetcore-browser-refresh.js - -
+2022-01-22 15:24:22.394 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7085/_framework/aspnetcore-browser-refresh.js - - - 200 11940 application/javascript;+charset=utf-8 9.1468ms
+2022-01-22 15:24:22.394 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7085/index.html - - - 200 - text/html;charset=utf-8 295.5436ms
+2022-01-22 15:24:22.643 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7085/swagger/v1/swagger.json - -
+2022-01-22 15:24:22.782 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7085/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 138.4509ms
+2022-01-22 15:47:00.864 -05:00 [INF] User profile is available. Using 'C:\Users\jonjo\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-22 15:47:01.298 -05:00 [INF] Now listening on: https://localhost:7085
+2022-01-22 15:47:01.299 -05:00 [INF] Now listening on: http://localhost:5085
+2022-01-22 15:47:01.301 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-22 15:47:01.302 -05:00 [INF] Hosting environment: Development
+2022-01-22 15:47:01.302 -05:00 [INF] Content root path: C:\Users\jonjo\OneDrive\Desktop\Revature\P1\WebAPI\
+2022-01-22 15:47:02.070 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7085/index.html - -
+2022-01-22 15:47:02.342 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7085/index.html - - - 200 - text/html;charset=utf-8 275.8713ms
+2022-01-22 15:47:02.354 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7085/_framework/aspnetcore-browser-refresh.js - -
+2022-01-22 15:47:02.362 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7085/_framework/aspnetcore-browser-refresh.js - - - 200 11940 application/javascript;+charset=utf-8 12.1139ms
+2022-01-22 15:47:02.671 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7085/swagger/v1/swagger.json - -
+2022-01-22 15:47:02.804 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7085/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 132.9952ms
+2022-01-22 15:47:07.704 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7085/api/ProductOrder/Jon - -
+2022-01-22 15:47:07.802 -05:00 [INF] BasicAuthentication was not authenticated. Failure message: Authentication failed: The format of value '<null>' is invalid.
+2022-01-22 15:47:07.806 -05:00 [INF] Executing endpoint 'WebAPI.Controllers.ProductOrderController.GetShoppingCart (WebAPI)'
+2022-01-22 15:47:07.826 -05:00 [INF] Route matched with {action = "GetShoppingCart", controller = "ProductOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Models.ProductOrder]] GetShoppingCart(System.String) on controller WebAPI.Controllers.ProductOrderController (WebAPI).
+2022-01-22 15:47:09.662 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Models.ProductOrder, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-22 15:47:09.674 -05:00 [INF] Executed action WebAPI.Controllers.ProductOrderController.GetShoppingCart (WebAPI) in 1843.9886ms
+2022-01-22 15:47:09.675 -05:00 [INF] Executed endpoint 'WebAPI.Controllers.ProductOrderController.GetShoppingCart (WebAPI)'
+2022-01-22 15:47:09.675 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7085/api/ProductOrder/Jon - - - 200 - application/json;+charset=utf-8 1970.8471ms
+2022-01-22 15:47:18.327 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7085/api/ProductOrder/22404 - -
+2022-01-22 15:47:18.361 -05:00 [INF] BasicAuthentication was not authenticated. Failure message: Authentication failed: The format of value '<null>' is invalid.
+2022-01-22 15:47:18.361 -05:00 [INF] Executing endpoint 'WebAPI.Controllers.ProductOrderController.GetProductOrder (WebAPI)'
+2022-01-22 15:47:18.362 -05:00 [INF] Route matched with {action = "GetProductOrder", controller = "ProductOrder"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Models.ProductOrder] GetProductOrder(Int32) on controller WebAPI.Controllers.ProductOrderController (WebAPI).
+2022-01-22 15:47:18.481 -05:00 [INF] Executing OkObjectResult, writing value of type 'Models.ProductOrder'.
+2022-01-22 15:47:18.482 -05:00 [INF] Executed action WebAPI.Controllers.ProductOrderController.GetProductOrder (WebAPI) in 119.7992ms
+2022-01-22 15:47:18.483 -05:00 [INF] Executed endpoint 'WebAPI.Controllers.ProductOrderController.GetProductOrder (WebAPI)'
+2022-01-22 15:47:18.483 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7085/api/ProductOrder/22404 - - - 200 - application/json;+charset=utf-8 156.2220ms

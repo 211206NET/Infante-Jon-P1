@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
         // GET api/<ProductOrderController>/username
         // Gets a user's entire shopping cart
         [HttpGet("{username}")]
-        public ActionResult GetShoppingCart(string username)
+        public ActionResult<List<ProductOrder>> GetShoppingCart(string username)
         {
             List<ProductOrder> shoppingCart = _iubl.GetAllProductOrders(username);
             //The shopping cart is not empty
@@ -39,7 +39,7 @@ namespace WebAPI.Controllers
         // GET api/<ProductOrderController>/id
         // Gets an individual product order
         [HttpGet("{id:int}")]
-        public ActionResult GetProductOrder(int id)
+        public ActionResult<ProductOrder> GetProductOrder(int id)
         {
             ProductOrder pOrder = _iubl.GetProductOrder(id);
             if (pOrder.ID != null)

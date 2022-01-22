@@ -105,7 +105,7 @@ namespace WebAPI.Controllers
         // GET: api/<UserController>/orders/username
         // Return a list of store orders in the database ordered
         [HttpGet("orders/{username}")]
-        public ActionResult<List<User>> GetStoreOrders(string username, string selection)
+        public ActionResult<List<StoreOrder>> GetStoreOrders(string username, string selection)
         {
             User currUser = _iubl.GetCurrentUserByUsername(username);
             //User not found
