@@ -8,7 +8,7 @@ using Serilog;
 
 Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
-                .WriteTo.File("logfile.txt")
+                .WriteTo.File("var/log/logfile.log")
                 .CreateLogger();
 var builder = WebApplication.CreateBuilder(args);
 

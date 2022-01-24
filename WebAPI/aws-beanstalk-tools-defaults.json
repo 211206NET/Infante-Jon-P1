@@ -1,0 +1,20 @@
+
+{
+    "region" : "us-west-2",
+    "configuration" : "Debug",
+    "framework"     : "net6.0",
+    "self-contained" : true,
+    "application"    : "P1WebAPI",
+    "environment"    : "P1WebAPI-prod",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.2.9 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "p1webapi-prod",
+    "instance-type"        : "t2.micro",
+    "key-pair"             : "P1-keypair",
+    "instance-profile"     : "aws-elasticbeanstalk-P1WebAPI-prod",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}
