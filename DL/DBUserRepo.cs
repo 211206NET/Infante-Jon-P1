@@ -408,7 +408,9 @@ public class DBUserRepo : IURepo {
         //Getting the current date for and random id for storeOrder paramaters
         Random rnd = new Random();
         int cartid = rnd.Next(1000000);
-        string currTime = DateTime.Now.ToString();
+        var timeUtc = DateTime.UtcNow;
+        var easternZone = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+        string currTime = TimeZoneInfo.ConvertTimeFromUtc(timeUtc, easternZone).ToString();
         double currTimeSeconds = DateTime.Now.Subtract(DateTime.MinValue).TotalSeconds;
         StoreOrder userStoreOrder = new StoreOrder
         {
